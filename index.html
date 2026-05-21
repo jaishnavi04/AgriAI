@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Crop Disease Detection System</title>
+    <meta name="description" content="AI-powered farming and plant health monitoring for modern agriculture.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=3.0">
+</head>
+<body>
+    <canvas id="hero-lightpass"></canvas>
+
+    <nav class="navbar">
+        <div class="logo">AgriAI</div>
+        <ul class="nav-links">
+            <li><a href="#home" data-i18n="nav_home">Home</a></li>
+            <li><a href="#features" data-i18n="nav_features">Features</a></li>
+            <li><a href="#detection" data-i18n="nav_detection">Detection</a></li>
+            <li><a href="#dashboard" data-i18n="nav_dashboard">Dashboard</a></li>
+            <li><a href="#about" data-i18n="nav_about">About</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+        <div class="lang-switcher">
+            <select id="lang-select">
+                <option value="en">English</option>
+                <option value="hi">हिंदी (Hindi)</option>
+                <option value="te">తెలుగు (Telugu)</option>
+            </select>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="section hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title" data-i18n="hero_title">Smart Crop Disease<br>Detection System</h1>
+                <p class="hero-subtitle" data-i18n="hero_subtitle">AI-powered farming and plant health monitoring for the future of agriculture.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" id="btn-start-scan" data-i18n="btn_scan">Start Scanning</button>
+                    <input type="file" id="scan-upload" accept="image/*" style="display: none;">
+                    <button class="btn btn-secondary" data-i18n="btn_learn_more">Learn More</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- A spacer section to let the scrollytelling canvas run -->
+        <section class="spacer-section"></section>
+
+        <section id="features" class="section features-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="feat_title">Next-Gen Farming</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass">
+                        <div class="icon">🌿</div>
+                        <h3 data-i18n="feat_1_title">AI Disease Detection</h3>
+                        <p data-i18n="feat_1_desc">Instant identification of crop diseases using advanced machine learning models trained on millions of samples.</p>
+                    </div>
+                    <div class="feature-card glass">
+                        <div class="icon">📊</div>
+                        <h3 data-i18n="feat_2_title">Real-time Monitoring</h3>
+                        <p data-i18n="feat_2_desc">24/7 continuous health tracking with automated alerts for potential outbreaks before they spread.</p>
+                    </div>
+                    <div class="feature-card glass">
+                        <div class="icon">🧠</div>
+                        <h3 data-i18n="feat_3_title">Smart Analytics</h3>
+                        <p data-i18n="feat_3_desc">Deep insights into crop performance, yield prediction, and actionable recommendations.</p>
+                    </div>
+                    <div class="feature-card glass">
+                        <div class="icon">⏱️</div>
+                        <h3 data-i18n="feat_4_title">Early Prediction</h3>
+                        <p data-i18n="feat_4_desc">Forecast potential threats weeks in advance using predictive climate and environmental data.</p>
+                    </div>
+                    <div class="feature-card glass">
+                        <div class="icon">📱</div>
+                        <h3 data-i18n="feat_5_title">Farmer-friendly UI</h3>
+                        <p data-i18n="feat_5_desc">Intuitive interface designed for ease of use in the field, accessible on any device.</p>
+                    </div>
+                    <div class="feature-card glass">
+                        <div class="icon">☁️</div>
+                        <h3 data-i18n="feat_6_title">Cloud Sync</h3>
+                        <p data-i18n="feat_6_desc">All your data securely backed up and synchronized across your farming operation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="detection" class="section detection-section">
+            <div class="container">
+                <div class="detection-layout">
+                    <div class="detection-text">
+                        <h2 class="section-title"><span data-i18n="det_title_1">Precision Scanning.</span> <br><span class="text-gradient" data-i18n="det_title_2">Zero Guesswork.</span></h2>
+                        <p data-i18n="det_desc">Simply point your device at a crop leaf and our AI will instantly analyze its health, identifying diseases, pests, and nutrient deficiencies with 99.8% accuracy.</p>
+                        <ul class="detection-list">
+                            <li><span>✓</span> <span data-i18n="det_li_1">Ultra-fast local processing</span></li>
+                            <li><span>✓</span> <span data-i18n="det_li_2">Works completely offline</span></li>
+                            <li><span>✓</span> <span data-i18n="det_li_3">Supports over 500+ plant species</span></li>
+                        </ul>
+                    </div>
+                    <div class="detection-visual glass">
+                        <div class="scanner-frame">
+                            <div class="scanner-line"></div>
+                            <img src="https://images.unsplash.com/photo-1530836369250-ef71a3f5e481?auto=format&fit=crop&w=800&q=80" alt="Leaf Scanning" class="leaf-img">
+                            <div class="scan-overlay">
+                                <div class="scan-point p1"></div>
+                                <div class="scan-point p2"></div>
+                                <div class="scan-point p3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dashboard" class="section dashboard-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="dash_title">Mission Control</h2>
+                <p class="section-subtitle" data-i18n="dash_subtitle">Monitor everything from a single, powerful dashboard.</p>
+                
+                <div class="dashboard-preview glass">
+                    <div class="dash-header">
+                        <div class="dash-title" data-i18n="dash_overview">Farm Overview</div>
+                        <div class="dash-status"><span class="status-dot"></span> <span data-i18n="dash_status">System Online</span></div>
+                    </div>
+                    <div class="dash-grid">
+                        <div class="dash-card">
+                            <div class="dash-card-title" data-i18n="dash_health">Overall Crop Health</div>
+                            <div class="dash-value text-green">94.2%</div>
+                            <div class="dash-chart progress-circle">
+                                <svg viewBox="0 0 36 36" class="circular-chart green">
+                                    <path class="circle-bg"
+                                      d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    />
+                                    <path class="circle"
+                                      stroke-dasharray="94, 100"
+                                      d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="dash-card">
+                            <div class="dash-card-title" data-i18n="dash_alerts">Active Alerts</div>
+                            <div class="dash-value text-yellow">2</div>
+                            <ul class="alert-list">
+                                <li class="alert-item warning" data-i18n="dash_alert_1">Low moisture in Sector 4</li>
+                                <li class="alert-item risk" data-i18n="dash_alert_2">Early blight risk in tomatoes</li>
+                            </ul>
+                        </div>
+                        <div class="dash-card">
+                            <div class="dash-card-title" data-i18n="dash_env">Environment</div>
+                            <div class="env-stats">
+                                <div class="env-stat">
+                                    <span class="env-label" data-i18n="dash_moisture">Moisture</span>
+                                    <span class="env-val text-blue">68%</span>
+                                    <div class="bar-bg"><div class="bar-fill blue" style="width: 68%;"></div></div>
+                                </div>
+                                <div class="env-stat">
+                                    <span class="env-label" data-i18n="dash_temp">Temperature</span>
+                                    <span class="env-val text-orange">24°C</span>
+                                    <div class="bar-bg"><div class="bar-fill orange" style="width: 50%;"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dash-card wide">
+                            <div class="dash-card-title" data-i18n="dash_ai_trend">AI Analysis Trend</div>
+                            <div class="line-chart-mock">
+                                <svg viewBox="0 0 400 100" class="trend-line">
+                                    <path d="M0,80 L50,60 L100,65 L150,40 L200,45 L250,20 L300,25 L350,10 L400,15" fill="none" stroke="var(--accent-green)" stroke-width="3"/>
+                                    <path d="M0,80 L50,60 L100,65 L150,40 L200,45 L250,20 L300,25 L350,10 L400,15 L400,100 L0,100 Z" fill="url(#gradient)" stroke="none"/>
+                                    <defs>
+                                        <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                                            <stop offset="0%" stop-color="var(--accent-green)" stop-opacity="0.3"/>
+                                            <stop offset="100%" stop-color="var(--accent-green)" stop-opacity="0"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="about-content glass">
+                    <h2 class="section-title" data-i18n="about_title">Empowering the Future of Farming</h2>
+                    <p data-i18n="about_desc">We believe that combining state-of-the-art artificial intelligence with deep agricultural expertise is the key to sustainable, high-yield farming. Our mission is to put powerful, predictive tools directly into the hands of growers worldwide.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="contact-box glass">
+                    <h2 data-i18n="contact_title">Ready to upgrade your farm?</h2>
+                    <p data-i18n="contact_desc">Join the future of agriculture today.</p>
+                    <form class="contact-form" id="contact-form">
+                        <input type="email" id="contact-email" placeholder="Enter your email" data-i18n-placeholder="contact_placeholder" required>
+                        <button type="submit" class="btn btn-primary" data-i18n="contact_btn">Get Early Access</button>
+                    </form>
+                    <p id="contact-message" style="margin-top: 1rem; font-size: 0.9rem; color: var(--accent-green); display: none;"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer_text">&copy; 2026 AgriAI Systems. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scan Result Modal -->
+    <div id="scan-modal" class="modal">
+        <div class="modal-content glass">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title" data-i18n="modal_analyzing">Analyzing Image...</h2>
+            <div id="modal-loader" class="loader"></div>
+            <div id="modal-results" style="display: none;">
+                <p><strong data-i18n="modal_status">Status:</strong> <span id="res-disease" class="text-gradient"></span></p>
+                <p><strong data-i18n="modal_confidence">Confidence:</strong> <span id="res-confidence"></span>%</p>
+                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(0,255,136,0.1); border-radius: 8px;">
+                    <p><strong data-i18n="modal_recommendation">AI Recommendation:</strong></p>
+                    <p id="res-recommendation" style="font-size: 0.9rem; margin-top: 0.5rem;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Voice Assistant Button -->
+    <button id="voice-btn" class="voice-fab" aria-label="Voice Assistant" title="Click to speak">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mic"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+    </button>
+    <div id="voice-feedback" class="voice-feedback">
+        <span data-i18n="voice_listening">Listening...</span>
+    </div>
+
+    <script src="script.js?v=3.0"></script>
+</body>
+</html>

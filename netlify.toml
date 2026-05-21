@@ -1,0 +1,27 @@
+# Netlify Configuration — AgriAI Crop Detection System v3.0
+
+# Cache-Control Headers
+# These rules tell browsers and Netlify's CDN to NEVER cache HTML
+# but to aggressively cache fingerprinted assets (CSS/JS with ?v= query)
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Pragma = "no-cache"
+    Expires = "0"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
